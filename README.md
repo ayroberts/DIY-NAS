@@ -29,3 +29,15 @@ sudo nano /etc/exports
 Reload NFS Server
 sudo exportfs -a
 sudo systemctl restart nfs-kernel-server
+  
+  
+Security Groups AWS
+Leave outbound rules as default ALLOW
+ALLOW https from any IPv4 address (can add IPv6)
+ALLOW http from any IPv4 address (can add IPv6)
+ALLOW ssh from "home" - public IP from ISP
+ALLOW ssh from WSU - 130.108.0.0/16
+ALLOW ssh within virtual network - 10.0.0.0/16
+ALLOW nfs from "home" - public IP from ISP
+ALLOW nfs from WSU - 130.108.0.0/16
+ALLOW nfs within virtual network - 10.0.0.0/16
