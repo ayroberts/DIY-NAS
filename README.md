@@ -16,3 +16,16 @@ Unmount, remount, and test functionality
 sudo umount /mnt/raid
 sudo mount -a
 mount
+  
+  
+Installing NFS Server
+Install Command
+sudo apt-get install nfs-kernel-server
+Create Shared Folder
+mkdir ~/shared
+Make the Folder Shared
+sudo nano /etc/exports
+~/shared 44.208.152.202(options)
+Reload NFS Server
+sudo exportfs -a
+sudo systemctl restart nfs-kernel-server
