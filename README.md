@@ -29,41 +29,71 @@ It should automatically mount upon startup, if the fstab file is configured.
 
 ```mount```  
   
+  
+
 ![broken image](img/mounted.PNG "Mounted")  
 
 
 # 2 - Installing NFS Server
-Install Command
-sudo apt-get install nfs-kernel-server
-Create Shared Folder
-mkdir ~/shared
-Make the Folder Shared
-sudo nano /etc/exports
-~/shared 44.208.152.202(options)
-Reload NFS Server
-sudo exportfs -a
-sudo systemctl restart nfs-kernel-server
+- Install Command  
+
+```sudo apt-get install nfs-kernel-server```  
+
+- Create Shared Folder  
+
+```mkdir ~/shared```  
+
+- Make the Folder Shared  
+
+```sudo nano /etc/exports```  
+
+```~/shared 44.208.152.202(options)``` 
+
+- Reload NFS Server  
+
+```sudo exportfs -a```  
+
+```sudo systemctl restart nfs-kernel-server```  
+
   
   
 # 3 - Security Groups AWS
-Leave outbound rules as default ALLOW
-ALLOW https from any IPv4 address
-ALLOW http from any IPv4 address
-ALLOW ssh from home
-ALLOW ssh from WSU
-ALLOW ssh within virtual network
-ALLOW nfs from home
-ALLOW nfs from WSU
-ALLOW nfs within virtual network
+Leave outbound rules as default ALLOW  
+
+ALLOW https from any IPv4 address  
+
+ALLOW http from any IPv4 address  
+
+ALLOW ssh from home  
+
+ALLOW ssh from WSU  
+
+ALLOW ssh within virtual network  
+
+ALLOW nfs from home  
+
+ALLOW nfs from WSU  
+
+ALLOW nfs within virtual network  
+
   
+![broken image](img/inbound.PNG "Inbound")
   
 # 4 - Mounting an NFS Share
-Install NFS in WSL2
-Install command
-sudo apt-get install nfs-common
-Create NFS Mount Point
-mkdir ~/nfs
-Mount NFS Share
-sudo mount -t nfs host.docker.internal:/path/to/shared/folder ~/nfs
-Test
-echo "Hello, NFS!" > ~/nfs/hello.txt
+Install NFS in WSL2  
+
+- Install command  
+
+```sudo apt-get install nfs-common```  
+
+- Create NFS Mount Point  
+
+```mkdir ~/nfs```  
+
+- Mount NFS Share  
+
+```sudo mount -t nfs host.docker.internal:/path/to/shared/folder ~/nfs```  
+
+- Test  
+
+```echo "Hello, NFS!" > ~/nfs/hello.txt```
