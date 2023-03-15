@@ -29,7 +29,9 @@ It should automatically mount upon startup, if the fstab file is configured.
 
 ```mount```  
   
+![broken image](/img/mounted.png "Mounted")  
   
+
 # 2 - Installing NFS Server
 Install Command
 sudo apt-get install nfs-kernel-server
