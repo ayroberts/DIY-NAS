@@ -29,7 +29,7 @@ It should automatically mount upon startup, if the fstab file is configured.
 
 ```mount```  
   
-![broken image](tree/main/img/mounted.PNG "Mounted")  
+![broken image](img/mounted.PNG "Mounted")  
 
 
 # 2 - Installing NFS Server
