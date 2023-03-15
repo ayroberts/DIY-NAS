@@ -18,7 +18,7 @@ sudo mount -a
 mount
   
   
-Installing NFS Server
+2 - Installing NFS Server
 Install Command
 sudo apt-get install nfs-kernel-server
 Create Shared Folder
@@ -31,7 +31,7 @@ sudo exportfs -a
 sudo systemctl restart nfs-kernel-server
   
   
-Security Groups AWS
+3 - Security Groups AWS
 Leave outbound rules as default ALLOW
 ALLOW https from any IPv4 address
 ALLOW http from any IPv4 address
@@ -41,3 +41,15 @@ ALLOW ssh within virtual network
 ALLOW nfs from home
 ALLOW nfs from WSU
 ALLOW nfs within virtual network
+  
+  
+4 - Mounting an NFS Share
+Install NFS in WSL2
+Install command
+sudo apt-get install nfs-common
+Create NFS Mount Point
+mkdir ~/nfs
+Mount NFS Share
+sudo mount -t nfs host.docker.internal:/path/to/shared/folder ~/nfs
+Test
+echo "Hello, NFS!" > ~/nfs/hello.txt
