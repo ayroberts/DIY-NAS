@@ -29,7 +29,7 @@ It should automatically mount upon startup, if the fstab file is configured.
 
 ```mount```  
   
-![broken image](DIY-NAS/img/mounted.png "Mounted")  
+![broken image](img/mounted.png "Mounted")  
   
 
 # 2 - Installing NFS Server
